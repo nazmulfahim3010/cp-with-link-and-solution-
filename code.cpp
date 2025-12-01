@@ -1,13 +1,28 @@
-class Solution {
-public:
-    int maxArea(vector<int>& heights) {
-        int maxarea = 0;
-        int  l =0,r = heights.size()-1;
-        while(l<r){
-            maxarea = max(maxarea,((r-l)*min(heights[l],heights[r])));
-            if(heights[l]<=heights[r]) l++;
-            else r--;
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        set<int> s;
+        for (int i = 0; i < n; i++) {
+            int x;
+            cin >> x;
+            s.insert(x);
         }
-        return maxarea;
+
+        int count = 0;
+        int y = INT_MIN;
+        for (auto num : s) {
+            if (num > y) {
+                y = num;
+                count++;
+            }
+        }
+
+        cout << count << endl;
     }
-};
+}
