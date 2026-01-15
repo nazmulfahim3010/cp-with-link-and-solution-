@@ -6,8 +6,6 @@ for _ in range(t):
     
     if n == 2:
         print(2)
-    elif n==3:
-        print(3)
     elif n % 2 == 0:
         print(0)
     else:
