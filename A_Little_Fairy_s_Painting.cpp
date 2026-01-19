@@ -12,22 +12,38 @@ int main()
     {
         int n;
         cin >> n;
+        set<int> a;
 
-        unordered_set<long long> s;
         for (int i = 0; i < n; i++)
         {
-            long long x;
+            int x;
             cin >> x;
-            s.insert(x);
+            a.insert(x);
         }
 
-        long long d = s.size();
-        while (s.count(d))
+        int dist_c = a.size();
+
+        if (a.find(dist_c) != a.end())
         {
-            d++;
+            cout << dist_c << '\n';
         }
-
-        cout << d << '\n';
+        else
+        {
+            int cur = dist_c;
+            while (true)
+            {
+                if (a.find(cur) != a.end())
+                {
+                    cout << cur << '\n';
+                    break;
+                }
+                else
+                {
+                    a.insert(cur);
+                    cur++;
+                }
+            }
+        }
     }
     return 0;
 }
