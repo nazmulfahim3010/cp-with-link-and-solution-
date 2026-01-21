@@ -2,5 +2,5 @@
 using namespace std;
 int main()
 {
-    cout << 4 % 8;
+    cout << (int)'z';
 }
